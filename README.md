@@ -40,12 +40,38 @@
  
  - Los selectores DOM permiten alcanzar objetos del documento HTML desde el script:
  
- 
+    | Nombre | Argumento | Retorno | Alcance |
+    | ------------- | ------------- | ------------- | ------------- |
+    | .querySelector() | Selector CSS | Objeto | Primer objeto que coincida con el selector |
+    | .querySelectorAll() | Selector CSS | NodeList | Array de objetos que coincidan con el selector |
+    | .getelementsByClassName() | Nombre de clase | HTMLCollection | Array de objetos que contengan la clase argumentada |
+    | .getelementsByTagName() | Nombre de etiqueta | HTMLCollection | Array de objetos que contengan la clase argumentada |
+    | .getelementsByName() | Valor de `name` | HTMLCollection | Array de objetos que contengan el valor argumentado en su atributo `name` |
 
-| Nombre | Argumento | Retorno | Alcance |
-| ------------- | ------------- | ------------- | ------------- |
-| .querySelector() | Selector CSS | Objeto | Primer objeto que coincida con el selector |
-| .querySelectorAll() | Selector CSS | NodeList | Array de objetos que coincidan con el selector |
-| .getelementsByClassName() | Nombre de clase | HTMLCollection * | Array de objetos que contengan la clase argumentada |
-| .getelementsByTagName() | Nombre de etiqueta | HTMLCollection * | Array de objetos que contengan la clase argumentada |
-| .getelementsByName() | Valor de `name` | HTMLCollection * | Array de objetos que contengan el valor argumentado en su atributo `name` |
+> <sub>**Nota**: HTMLCollection no dispone de método `.forEach()`, requiere copia.</sub>
+
+- Propiedades principales de los objetos HTML:
+  - `.innerText`
+  - `.innerHTML`
+  - `.style`
+  - `.id`
+  - `.className`
+
+ ## Main points: DOM manipulation
+ 
+ - La manipulación del DOM permite hacer cambios estéticos, de contenido o asociar eventos a objetos del documento mediante:
+   - `.removeAttribute()`
+   - `.setAttribute()`
+   - `.createElement()`
+   - `.createTextNode()`
+   - `.appendChild()`
+   - `.insertBefore()`
+   - `.removeChild()`
+
+- El objeto event puede ser capturado en aquellas funciones que sean invocadas a raíz de un evento, pudiendo obtener el objeto en particular que la ha invocado y todas sus propiedades mediante `currentTarget`:
+
+  ````javascript
+  obj.onclick = e () => console.log(e.currentTarget)
+  ````
+   
+  
