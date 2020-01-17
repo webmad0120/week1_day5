@@ -44,10 +44,10 @@
     | ------------- | ------------- | ------------- | ------------- |
     | .querySelector() | Selector CSS | Objeto | Primer objeto que coincida con el selector |
     | .querySelectorAll() | Selector CSS | NodeList | Array de objetos que coincidan con el selector |
-    | .getelementById() | Nombre de ID | Objeto | Objeto cuyo ID coincida con el selector |
-    | .getelementsByClassName() | Nombre de clase | HTMLCollection | Array de objetos que contengan la clase argumentada |
-    | .getelementsByTagName() | Nombre de etiqueta | HTMLCollection | Array de objetos que contengan la clase argumentada |
-    | .getelementsByName() | Valor de `name` | HTMLCollection | Array de objetos que contengan el valor argumentado en su atributo `name` |
+    | .getElementById() | Nombre de ID | Objeto | Objeto cuyo ID coincida con el selector |
+    | .getElementsByClassName() | Nombre de clase | HTMLCollection | Array de objetos que contengan la clase argumentada |
+    | .getElementsByTagName() | Nombre de etiqueta | HTMLCollection | Array de objetos que contengan la clase argumentada |
+    | .getElementsByName() | Valor de `name` | HTMLCollection | Array de objetos que contengan el valor argumentado en su atributo `name` |
 
 > <sub>**Nota**: HTMLCollection no dispone de método `.forEach()`, requiere copia.</sub>
 
