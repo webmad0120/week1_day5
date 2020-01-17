@@ -49,7 +49,7 @@
     | .getElementsByTagName() | Nombre de etiqueta | HTMLCollection | Array de objetos con la etiqueta argumentada |
     | .getElementsByName() | Valor de `name` | HTMLCollection | Array de objetos que contengan el valor argumentado en su atributo `name` |
 
-> <sub>**Nota**: HTMLCollection no dispone de método `.forEach()`, requiere copia.</sub>
+    > <sub>**Nota**: HTMLCollection no dispone de método `.forEach()`, requiere copia.</sub>
 
 - Propiedades principales de los objetos HTML:
   - `.innerText`
