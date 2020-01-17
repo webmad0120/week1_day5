@@ -15,9 +15,9 @@
 - En relación a las _keys_:
   - Hablamos de una **propiedad** frente a una _key_ cuyo valor es cualquier tipo de dato, excepto una función.
   - Hablamos de **método** frente a una _key_ cuyo valor es una función.
-- Es posible acceder a una _key_ de un objeto, bien sea para hacer un uso _setter_ o _getter_ de la misma:
+- El acceso a una _key_ para hacer un uso _setter_ o _getter_ de la misma, se realiza:
   - Mediante la notación del punto.
-  - Mediante el acceso nominal mediante corchetes.
+  - Mediante el acceso nominal (corchetes).
 - Los operadores aplicables a objetos son:
   - El operador `in`permite conocer la existencia de una propiedad en un objeto.
   - El operador `delete` permite eliminar una propiedad de un objeto.
@@ -74,5 +74,3 @@
   ````javascript
   obj.onclick = e => console.log(e.currentTarget)
   ````
-   
-  
