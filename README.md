@@ -29,7 +29,7 @@
  
  ## Main points: classes
  
-- Las clases describen la estructira que todas sus instancias compartirán.
+- Las clases describen la estructura que todas sus instancias compartirán.
 - Disponen de:
   - **Método constructor**: único, opcional y conectado a la instancia, donde se declaran las propiedades internas de la misma.
   - **Métodos prototype**: métodos ordinarios que dotan de capacidades a las instancias.
@@ -44,7 +44,8 @@
 
 | Nombre | Argumento | Retorno | Alcance |
 | ------------- | ------------- | ------------- | ------------- |
-| .querySelector() | Selector CSS | Objeto (no requiere copia) | Posicionamiento por defecto, mantiene el elemento en el flujo |
-| .querySelectorAll() | Selector CSS | Array (no requiere copia) | Permite **desplazar** el elemento mediante las propuedades `top`, `left`, `righ` y `bottom` en relación a su posiciòn inicial|
-| Absolute | Sí | Sí | Permite **posicionar** el elemento mediante las propuedades `top`, `left`, `righ` y `bottom` en relación a su contenedor relativo, o a la pantalla si no lo tuviera|
-| Fixed | Sí | No | Permite **posicionar** el elemento mediante las propuedades `top`, `left`, `righ` y `bottom`en relación a la pantalla |
+| .querySelector() | Selector CSS | Objeto | Primer objeto que coincida con el selector |
+| .querySelectorAll() | Selector CSS | NodeList | Array de objetos que coincidan con el selector |
+| .getelementsByClassName() | Nombre de clase | HTMLCollection * | Array de objetos que contengan la clase argumentada |
+| .getelementsByTagName() | Nombre de etiqueta | HTMLCollection * | Array de objetos que contengan la clase argumentada |
+| .getelementsByName() | Valor de `name` | HTMLCollection * | Array de objetos que contengan el valor argumentado en su atributo `name` |
