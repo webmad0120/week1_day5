@@ -71,7 +71,7 @@
 - El objeto event puede ser capturado en aquellas funciones que sean invocadas a raíz de un evento, pudiendo obtener el objeto en particular que la ha invocado y todas sus propiedades mediante `currentTarget`:
 
   ````javascript
-  obj.onclick = e () => console.log(e.currentTarget)
+  obj.onclick = e => console.log(e.currentTarget)
   ````
    
   
