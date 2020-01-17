@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS</title>
+</head>
+
+<body>
+    <script>
+
+
+        class Person {
+
+            // Método constructor: palabra reservada, único, opcional y conectado a la instancia
+            constructor(name, surname, age, celiac, profession, hobbies) {
+                this._name = name
+                this._surname = surname
+                this._age = age
+                this._celiac = celiac
+                this._profession = profession
+                this._hobbies = hobbies
+            }
+
+            // Métodos prototype
+            setNewJobCity = city => this._profession.city = city
+            setNewHobby = hobby => this._hobbies.push(hobby)
+            getPresentation = () => `La persona se llama ${this._name} y tiene ${this._age} años y trabaja en ${this._profession.city}`
+            //setNewHobby(city) { this._profession.city = city }
+        }
+
+
+        // Instancias de la clase Person
+        const person1 = new Person('Ger', 'Álvarez', 33, false, { role: 'LT', workplace: 'Ironhack', city: 'Madrid' }, ['sky', 'beer'])
+        const person2 = new Person('Luz', 'Delgado', 31, true, { role: 'student', workplace: 'Ironhack', city: 'Madrid' }, ['programming'])
+
+        person1.setNewJobCity('Mexico')
+        person1.setNewHobby('gadgets')
+        const presentation = person1.getPresentation()
+
+        console.log(`La instancia nos dice que la persona 1 se llama ${person1._name}`)
+        console.log(`Y trabaja en ${person1._profession.city}`)
+        console.log(`Además, sus hobbies son ${person1._hobbies}`)
+        console.log(`Aquí una presentación completa: ${presentation}`)
+
+        console.log(person1)
+
+    </script>
+</body>
+
+</html>

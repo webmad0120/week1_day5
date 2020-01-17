@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM</title>
+    <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' rel='stylesheet'
+        crossorigin='anonymous'>
+</head>
+
+<body>
+
+    <button id="clickme">HAZME CLICK</button>
+
+    <p>Me pondré colorado :3 1</p>
+    <p>Me pondré colorado :3 2</p>
+    <p>Me pondré colorado :3 3</p>
+    <p>Me pondré colorado :3 4</p>
+    <p>Me pondré colorado :3 5</p>
+    <p>Me pondré colorado :3 6</p>
+
+
+    <form action="">
+        Nombre: <input type="text">
+        Edad: <input type="text">
+        <input id="sendme" type="submit" value="Enviar">
+    </form>
+
+    <script>
+
+        // Propiedades de evento
+        document.querySelector('#clickme').onclick = () => {
+            document.querySelectorAll('p').forEach(elm => elm.style.color = 'tomato')
+        }
+
+        // Obtener valores de formulario
+        document.querySelector('#sendme').onclick = () => {
+            const inputs = document.querySelectorAll('input')
+            const name = inputs[0].value
+            const age = inputs[1].value
+
+            alert(`${name} tiene ${age} años`)
+        }
+
+
+        document.querySelectorAll('p').forEach(elm => {
+            // Objeto event
+            elm.onclick = e => alert(e.currentTarget.innerText)     // CurrentTarget con todas las propiedades del elemento que ha invocado la función a raíz del evento
+
+        })
+
+    </script>
+</body>
+
+</html>

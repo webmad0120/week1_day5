@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM</title>
+    <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' rel='stylesheet'
+        crossorigin='anonymous'>
+</head>
+
+<body>
+
+    <p id="first" title="Hazme click">Párrafo</p>
+    <p id="second" title="Hazme click">Párrafo</p>
+    <p id="third" title="Hazme click">Párrafo</p>
+    <p id="last" title="Hazme click">Párrafo</p>
+
+
+
+    <script>
+        // Obtener valor de atributo
+        let paragraph = document.getElementById('first')
+        let paragraphId = paragraph.getAttribute('title')
+        console.log(paragraphId)
+
+        // Manipular valor de atributo
+        let paragraph2 = document.getElementById('second')
+        paragraph2.setAttribute('title', 'No! No me hagas click plz')
+        paragraph2.setAttribute('class', 'nuevo-atributo-creado-desde-js')
+
+        // Eliminar atributo
+        let paragraph3 = document.getElementById('third')
+        paragraph3.removeAttribute('title')
+
+
+        // Inyectar nodo nuevo en el DOM
+        const mainTitle = document.createElement('h1')      // Creación elemento
+        mainTitle.innerText = "Creado dinámicamente"        // Inserción texto / atributos / etc
+
+        // let text = document.createTextNode("Creado dinámicamente")
+        // mainTitle.appendChild(text)
+        let parent = document.querySelector('body')         // Inyección en el DOM
+        parent.appendChild(mainTitle)
+
+
+
+        const mainTitle2 = document.createElement('h5')      // Creación elemento
+        mainTitle2.innerText = "Creado dinámicamente, pero un h5"        // Inserción texto / atributos / etc
+        let sibling = document.querySelector('p')
+        parent.insertBefore(mainTitle2, sibling)
+
+
+        // Elminar nodo del DOM
+        let theParagraph = document.querySelector("#last")
+        parent.removeChild(theParagraph)
+
+    </script>
+</body>
+
+</html>

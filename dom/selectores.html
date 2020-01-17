@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM</title>
+    <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' rel='stylesheet'
+        crossorigin='anonymous'>
+</head>
+
+<body>
+
+    <h1 id="title1">Contenido inicial</h1>
+    <h1 id="title2">Contenido inicial</h1>
+
+    <p class="paragraph">Soy un párrafo</p>
+    <p class="paragraph">Soy un párrafo</p>
+    <p class="paragraph">Soy un párrafo</p>
+    <p class="paragraph">Soy un párrafo</p>
+    <p class="paragraph">Soy un párrafo</p>
+
+    <h5 class="subtitle">Soy un subtítulo</h5>
+    <h5 class="subtitle">Soy un subtítulo</h5>
+    <h5 class="subtitle">Soy un subtítulo</h5>
+
+    <small>Soy un texto de mínima relevancia</small>
+    <small>Soy un texto de mínima relevancia</small>
+    <small class="green">Soy un texto de mínima relevancia</small>
+    <!-- la propiedad .className no repetará la clase 'green'-->
+
+    <script>
+
+        // selector .querySelector()
+        const oneParagraph = document.querySelector('.paragraph')
+        console.log(`.querySelector() retorna el primer objeto con el que haga match:`, oneParagraph)
+        oneParagraph.style.color = 'red'
+
+        // selector .querySelectorAll()
+        const allParagraphs = document.querySelectorAll('.paragraph')
+        console.log(`.querySelectorAll() retorna un array de objetos con los que haga match:`, allParagraphs)
+        allParagraphs.forEach(elm => elm.style.backgroundColor = 'grey')
+        allParagraphs[2].style.color = 'white'
+        allParagraphs[4].textContent = 'Soy el quinto waaawww'
+
+
+
+
+
+
+        // selector .getElementById('nombreId')
+        let DOMtitle1 = document.getElementById('title1')
+        let DOMtitle2 = document.getElementById('title2')
+        DOMtitle2.innerHTML = "David ha preguntado esto <strong>woah!</strong>"
+        DOMtitle1.style.borderBottom = '10px dotted black'
+        DOMtitle2.style.fontSize = '20px'
+
+        console.log({ DOMtitle1 })      // Nodo por dentro D:
+
+
+
+
+        // selector .getElementsByClassName('nombreClase')
+        const subtitles = document.getElementsByClassName('subtitle')
+        const subtitlesArray = [...subtitles]
+        subtitlesArray.forEach(elm => elm.textContent = 'El selector de clase recibe el nombre de la clase sin el punto')
+
+
+
+
+
+        // selector .getElementsByTagName('nombreEtiqueta')
+        const smallTags = document.getElementsByTagName('small')
+        const smallTagsArray = [...smallTags]
+        smallTagsArray.forEach(elm => {
+            elm.className = 'smalltext'
+            elm.style.textShadow = '2px 2px 3px red'
+        })
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS</title>
+</head>
+
+<body>
+    <script>
+
+
+        class Person {
+
+            constructor(name, surname, age, celiac) {
+                this._name = name
+                this._surname = surname
+                this._age = age
+                this._celiac = celiac
+            }
+
+            getPresentation = () => `La persona se llama ${this._name} y tiene ${this._age} años`
+        }
+
+        const person1 = new Person('Ger', 'Álvarez', 33, false)
+        const person2 = new Person('Luz', 'Delgado', 31, true)
+
+        console.log(`La persona 1 se presenta: ${person1.getPresentation()}`)
+
+
+
+
+
+
+
+
+        class Player extends Person {
+
+            constructor(name, surname, age, celiac, cash, lives) {
+                super(name, surname, age, celiac)
+                this._cash = cash
+                this._lives = lives
+            }
+
+            loseLives = livesLost => {
+                if (livesLost >= this._lives) {
+                    console.log('Estás muerto')
+                }
+                else {
+                    this._lives -= livesLost
+                }
+            }
+        }
+
+
+        const player1 = new Player('David', 'Veral', 33, false, 5000, 3)
+
+        console.log(`El jugador tiene ${player1._lives} vidas`)
+        player1.loseLives(2)
+        console.log(`El jugador tiene ${player1._lives} vidas`)
+
+        console.log(`El jugador, como persona que es, también puede presentarse... ${player1.getPresentation()}`)
+
+
+
+
+
+
+
+        class Witch extends Player {
+            constructor(name, surname, age, celiac, cash, lives) {
+                super(name, surname, age, celiac, cash, lives)
+                this._role = 'Bruja'
+            }
+
+            makeSpell = power => console.log(`${this._name} ${this._surname} te echó un hechizo de fuerza ${power}... aw!`)
+            getPresentation = () => `Este personaje se llama ${this._name} y es un/a ${this._role}`
+        }
+
+        const character1 = new Witch('Piruja', 'García', 33, true, 5000, 4)
+        character1.makeSpell(25)
+        character1.loseLives(4)
+        console.log(character1.getPresentation())
+
+
+
+
+
+
+        class Elf extends Player {
+            constructor(name, surname, age, celiac, cash, lives) {
+                super(name, surname, age, celiac, cash, lives)
+                this._role = 'Enano'
+            }
+
+            spit = () => console.log(`¡El enano te escupió! Menudo guarro...`)
+            getPresentation = () => `Este personaje se llama ${this._name} y es un/a ${this._role}`
+        }
+
+        const character2 = new Elf('Légolas', 'López', 33, false, 1000, 3)
+        character2.spit()
+        console.log(character2.getPresentation())
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS</title>
+</head>
+
+<body>
+    <script>
+
+        const person = {
+            name: "Ger",
+            surname: "Álvarez",
+            age: 33,
+            birth: Date(1986, 4, 23),
+            celiac: false,
+            profession: {
+                role: 'LT',
+                workplace: 'Ironhack',
+                city: 'Madrid'
+            },
+            hobbies: ['Programming', 'Beer', 'Techo'],
+            subscriptions: [
+                {
+                    name: 'Netflix',
+                    price: 9.99,
+                    frequence: 'mensual',
+                    currency: '€'
+                },
+                {
+                    name: 'Adobe',
+                    price: 60,
+                    frequence: 'anual',
+                    currency: '€'
+                }
+            ],
+            setNewHobby(newHobby) {
+                this.hobbies.push(newHobby)
+            },
+            // setNewHobby: function (newHobby) {
+            //     this.hobbies.push(newHobby)
+            // }
+            getPresentation() {
+                return `La persona se llama ${this.name} y tiene ${this.age} años y trabaja en ${this.profession.city}`
+            }
+        }
+
+        // Acceso a las propiedades (getter)
+        const userName = person.name
+        const age = person['age']
+        const city = person.profession.city
+        console.log(`La persona se llama ${userName} y tiene ${age} años y trabaja en ${city}`)
+
+
+        // Acceso a las propiedades (setter)
+        person.age = 34
+        person['surname'] = 'Ruiz'
+        person.subscriptions.push({ name: 'HBO', price: 9.9, frequence: 'mensual', currency: '€' })
+
+
+        // Operador in
+        console.log(`¿Tiene hobbies? ${'hobbies' in person}`)
+
+        // Operador delete
+        delete person.celiac
+        console.log(person)
+
+
+        // Array de keys de un objeto
+        const props = Object.keys(person)
+        console.log(`Las propiedades de la persona son`, props)
+
+
+        // Array de valores de un objeto
+        const values = Object.values(person)
+        console.log(`Las propiedades de la persona son`, values)
+
+
+        // Iteración sobre objeto
+        for (keyName in person) {
+            console.log(`Una propiedad es ${keyName}, y su valor es ${person[keyName]}`)
+        }
+
+        // Object method
+        person.setNewHobby('sky')
+        console.log('Ahora la persona tiene un nuevo hobby:' + person.hobbies)
+
+        console.log(person.getPresentation())
+
+
+
+
+    </script>
+</body>
+
+</html>
