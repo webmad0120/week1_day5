@@ -11,20 +11,25 @@
 
 ## Main points: objects
 
-- Los objetos de notación literal están compuestos por pares _key: value_
-- En relación a las _keys_:
-  - Hablamos de una **propiedad** frente a una _key_ cuyo valor es cualquier tipo de dato, excepto una función.
-  - Hablamos de **método** frente a una _key_ cuyo valor es una función.
-- El acceso a una _key_ para hacer un uso _setter_ o _getter_ de la misma, se realiza:
+- Los objetos de notación literal están compuestos por pares `key: value`
+
+- En relación a las `keys`:
+  - Hablamos de una **propiedad** frente a una `key` cuyo valor es cualquier tipo de dato, excepto una función.
+  - Hablamos de **método** frente a una `key` cuyo valor es una función.
+  
+- El acceso a una `key` para hacer un uso _setter_ o _getter_ de la misma, se realiza:
   - Mediante la notación del punto.
   - Mediante el acceso nominal (corchetes).
+  
 - Los operadores aplicables a objetos son:
   - El operador `in`permite conocer la existencia de una propiedad en un objeto.
   - El operador `delete` permite eliminar una propiedad de un objeto.
+  
 - Las iteraciones aplicables a objetos son:
   - El bucle `for...in` permite recorrer las _keys_ de un objeto.
   - `Object.keys(obj)` permite iterar sobre las _keys_ de un objeto.
   - `Object.values(obj)` permite iterar sobre los valores de un objeto.
+  
  - Dentro de método de un objeto la palabra reservada `this`hace referencia al propio objeto.
  
  ## Main points: classes
